@@ -18,7 +18,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        idTextField.placeholder = "Enter Username"
+
         loginBtn.layer.cornerRadius = 5
     }
     

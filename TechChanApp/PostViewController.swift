@@ -28,10 +28,8 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         postTextView.layer.cornerRadius = 5
-        
+    
         //ログインでidを記入しなかったら匿名と表示される
         if id == ""{
             id = "匿名"
