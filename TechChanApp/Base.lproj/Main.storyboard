@@ -48,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="idTextField" destination="ZFh-dw-0ZA" id="PhK-dB-jSv"/>
+                        <outlet property="loginBtn" destination="Bm7-5P-oQi" id="TmG-gR-gEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -6,7 +6,8 @@
 //  Copyright © 2020 Haruko Okada. All rights reserved.
 //
 
-class Post{
+// 投稿のクラス
+class Post {
     
     var username: String?
     var post: String?

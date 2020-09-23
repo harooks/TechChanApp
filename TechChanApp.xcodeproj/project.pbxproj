@@ -152,12 +152,12 @@
 				F5D7DFAC2518B90B003B6E00 /* ViewController.swift */,
 				F5D7DFDC2518BEB7003B6E00 /* PostViewController.swift */,
 				F5D7DFE4251ADD97003B6E00 /* PostTableViewCell.swift */,
+				F5D7DFE6251ADE7B003B6E00 /* Post.swift */,
 				F5D7DFAE2518B90B003B6E00 /* Main.storyboard */,
 				F5D7DFB12518B90D003B6E00 /* Assets.xcassets */,
 				F5D7DFB32518B90D003B6E00 /* LaunchScreen.storyboard */,
 				F5D7DFDA2518BB5C003B6E00 /* GoogleService-Info.plist */,
 				F5D7DFB62518B90D003B6E00 /* Info.plist */,
-				F5D7DFE6251ADE7B003B6E00 /* Post.swift */,
 			);
 			path = TechChanApp;
 			sourceTree = "<group>";

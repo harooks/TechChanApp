@@ -12,13 +12,14 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
     
     var id: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("hello")
+        loginBtn.layer.cornerRadius = 5
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+//セルのクラス
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var usernameLabel: UILabel!
