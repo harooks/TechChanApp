@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>369020342386-9q8uvocob152u2mh1m0flvomi7bukbos.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.369020342386-9q8uvocob152u2mh1m0flvomi7bukbos</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCG37xkifaYUQPJI_TEzcD5SZ2BMOnjbtY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>369020342386</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>harooks.TechChanApp</string>
+	<key>PROJECT_ID</key>
+	<string>techchan-e96eb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>techchan-e96eb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:369020342386:ios:b8e10c001c07265da5f2eb</string>
+	<key>DATABASE_URL</key>
+	<string>https://techchan-e96eb.firebaseio.com</string>
+</dict>
+</plist>
