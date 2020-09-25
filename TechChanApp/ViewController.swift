@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var idTextField: UITextField!
-    @IBOutlet weak var loginBtn: UIButton!
+    
+    @IBOutlet weak var loginButton: UIButton!
     
     var id: String = ""
     
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
         
         idTextField.placeholder = "Enter Username"
 
-        loginBtn.layer.cornerRadius = 5
+        loginButton.layer.cornerRadius = 5
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func loginBtn(_ sender: Any) {
+    @IBAction func loginButton(_ sender: Any) {
         id = idTextField.text!
         //print(id)
         //print("loginDone")

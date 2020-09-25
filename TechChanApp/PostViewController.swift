@@ -9,9 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class PostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-
+class PostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var idLabel: UILabel!
@@ -31,22 +29,22 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         postTextView.layer.cornerRadius = 5
     
         //ログインでidを記入しなかったら匿名と表示される
-        if id == ""{
+        if id.isEmpty {
             id = "匿名"
         }
         idLabel.text = "ID: \(id)"
         
 
-        ref.observe(DataEventType.value, with: {(DataSnapshot)in
+        ref.observe(DataEventType.value, with: {(dataSnapshot)in
             
 
-            if DataSnapshot.childrenCount > 0 {
+            if dataSnapshot.childrenCount > 0 {
 
                 //表示がダブらないように一旦配列を空にする
                 self.postArray.removeAll()
                 
                 //firebaseのデータを読み込んで配列に入れる
-                for postData in DataSnapshot.children.allObjects as! [DataSnapshot] {
+                for postData in dataSnapshot.children.allObjects as! [DataSnapshot] {
                     let postObject = postData.value as? [String: AnyObject]
                     let usernameElement = postObject?["username"]
                     let postElement = postObject?["post"]
@@ -63,6 +61,19 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
                   self.postTableView.reloadData()
            }
         })
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil);
+
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
     @IBAction func backBtn(_ sender: Any) {
@@ -74,6 +85,7 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         postContent = postTextView.text!
         addPosts()
         postTextView.text = ""
+        hideKeyboard()
     }
     
     //Firebaseにデータをkakikomu
@@ -103,6 +115,22 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
        return UITableView.automaticDimension
     }
     
+    func hideKeyboard() {
+        postTextView.resignFirstResponder()
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+            return
+        }
+        
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = -keyboardRect.height
+        } else {
+            view.frame.origin.y = 0
+        }
+    }
     
     /*
     // MARK: - Navigation
